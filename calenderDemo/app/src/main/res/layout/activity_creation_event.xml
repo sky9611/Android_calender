@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wth.application.CreationEventActivity">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:stretchColumns="1"
+        android:shrinkColumns="1">
+        <!--Event Name-->
+        <TableRow>
+
+            <TextView
+                android:id="@+id/event_name_label"
+                style="@style/TextAppearance.EditEvent_Label"
+                android:text="Title" />
+
+            <EditText
+                android:id="@+id/titre"
+                style="@style/TextAppearance.EditEvent_Value"
+                android:layout_width="wrap_content"
+                android:focusable="true"
+                android:hint="Event Name" />
+        </TableRow>
+
+
+        <!-- WHERE -->
+        <TableRow android:id="@+id/where_row"
+            android:focusable="true">
+            <TextView
+                android:text="Place"
+                style="@style/TextAppearance.EditEvent_Label" />
+            <AutoCompleteTextView
+                android:id="@+id/location"
+                android:singleLine="false"
+                style="@style/TextAppearance.EditEvent_Value"
+                android:hint="Event Place" />
+        </TableRow>
+
+        <!--From-->
+        <TableRow
+            android:id="@+id/from_row">
+            <TextView
+                android:id="@+id/from_label"
+                android:text="From"
+                style="@style/TextAppearance.EditEvent_Label"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:animateLayoutChanges="false">
+                <Button
+                    android:id="@+id/start_date"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:contentDescription="Start date"
+                    style="@style/TextAppearance.EditEvent_SpinnerButton" />
+                <Button
+                    android:id="@+id/start_time"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:contentDescription="Start time"
+                    style="@style/TextAppearance.EditEvent_SpinnerButton" />
+            </LinearLayout>
+        </TableRow>
+
+        <!--To-->
+        <TableRow
+            android:id="@+id/to_row">
+            <TextView
+                android:id="@+id/to_label"
+                android:text="To"
+                style="@style/TextAppearance.EditEvent_Label" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:animateLayoutChanges="false">
+                <Button
+                    android:id="@+id/end_date"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:contentDescription="End date"
+                    style="@style/TextAppearance.EditEvent_SpinnerButton" />
+                <Button
+                    android:id="@+id/end_time"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:contentDescription="End time"
+                    style="@style/TextAppearance.EditEvent_SpinnerButton" />
+            </LinearLayout>
+        </TableRow>
+
+        <!--Alarm-->
+        <TableRow
+            android:id="@+id/alarm_eow"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/alarm_label"
+                android:text="Alarm"
+                style="@style/TextAppearance.EditEvent_Label"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical|right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/reminder_items_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dip"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical|right"  />
+                <Button
+                    android:id="@+id/reminder_add"
+                    android:text="Add reminder"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="top|left"
+                    android:contentDescription="Add reminder"
+                    style="@style/TextAppearance.EditEvent_Button"
+                    android:layout_marginTop="0dip" />
+            </LinearLayout>
+        </TableRow>
+
+        <!-- DESCRIPTION -->
+        <TableRow android:id="@+id/description_row"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/description_label"
+                android:text="Description"
+                style="@style/TextAppearance.EditEvent_Label" />
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:hint="content"
+                android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
+                style="@style/TextAppearance.EditEvent_Value"
+                android:capitalize="sentences" />
+        </TableRow>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>
