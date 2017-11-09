@@ -1,0 +1,29 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<linearlayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <relativelayout
+        android:id="@+id/rl_choose_time"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="6dp">
+       <textview
+            android:id="@+id/tv_delay_type_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textcolor="@color/black"
+            android:text="minute before"
+            android:layout_centervertical="true"/>
+        <textview
+            android:id="@+id/tv_delay_type_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="后开启" android:layout_centervertical="true" android:layout_toleftof="@+id/iv_check" android:layout_marginright="33dp">
+     
+            <imageview android:id="@+id/iv_check" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centervertical="true" android:layout_alignparentright="true">
+     
+        </relativelayout>
+</linearlayout>
