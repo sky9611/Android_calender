@@ -14,16 +14,14 @@
             android:id="@+id/tv_delay_type_minute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textcolor="@color/black"
+            android:textColor="@android:color/black"
             android:text="minute before"
-            android:layout_centervertical="true"/>
-        <textview
-            android:id="@+id/tv_delay_type_hour"
+            android:layout_centerVertical="true"/>
+        <imageview
+            android:id="@+id/iv_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="后开启" android:layout_centervertical="true" android:layout_toleftof="@+id/iv_check" android:layout_marginright="33dp">
-     
-            <imageview android:id="@+id/iv_check" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centervertical="true" android:layout_alignparentright="true">
-     
-        </relativelayout>
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </relativelayout>
 </linearlayout>

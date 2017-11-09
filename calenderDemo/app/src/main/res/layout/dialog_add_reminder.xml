@@ -15,11 +15,6 @@
             android:hint="" />
     </TableRow>
     <TableRow>
-        <android.support.v7.widget.RecyclerView
-            style="@style/ShowReminderType"
-            android:id="@+id/reminder_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>  
 
     </TableRow>
 </TableLayout>
