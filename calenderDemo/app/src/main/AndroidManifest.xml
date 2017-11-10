@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreationEventActivity"></activity>
+        <activity android:name=".EventChanges"></activity>
     </application>
 
 </manifest>
