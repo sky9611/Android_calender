@@ -11,7 +11,7 @@
         android:layout_height="60dp"
         android:padding="6dp">
        <textview
-            android:id="@+id/tv_delay_type_minute"
+            android:id="@+id/tv_advance_type_minute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"

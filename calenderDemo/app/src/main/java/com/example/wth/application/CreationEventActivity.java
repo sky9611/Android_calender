@@ -1,11 +1,19 @@
 package com.example.wth.application;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.icu.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.ListMenuItemView;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -14,6 +22,11 @@ import android.widget.TextView;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.widget.TimePicker;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.ButterKnife;
 
 public class CreationEventActivity extends AppCompatActivity {
     TextView from_date = null;
@@ -40,10 +53,14 @@ public class CreationEventActivity extends AppCompatActivity {
     private int toDay = DAY_OF_MONTH;
     private int toHoure = HOURE;
     private int toMinute = MINUTE;
+    private ReminderAdapter adapter;
+    private List<ReminderListItem> list = new ArrayList<>();
+    private ReminderAdapter.MainRecycleViewClickListener onItenClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_event);
+        ButterKnife.bind(this);
         initView();
     }
 
@@ -95,12 +112,64 @@ public class CreationEventActivity extends AppCompatActivity {
         android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);
         builder.setTitle("Notice");
         //builder.setMessage("");
-        builder.setView(new EditText(this));
+        //builder.setView(new EditText(this));
+//        LayoutInflater inflater = getLayoutInflater();
+//        View dialog = inflater.inflate(R.layout.dialog_add_reminder,(ViewGroup) findViewById(R.id.dialog));
+//        builder.setView(dialog);
+//        String names[] ={"minutes before","hours before","days before","weeks before"};
+//        ListView lv = (ListView) dialog.findViewById(R.id.reminder_type_list);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
+//        lv.setAdapter(adapter);
         //builder.setView()new SingleChoiceItems(new String[]{"minutes before","hours before","days before"},0,null);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_add_reminder,(ViewGroup) findViewById(R.id.dialog));
+        //View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_reminder, null);
+        builder.setView(dialogView);
+        Dialog dialog = builder.create();
+        RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.reminder_type_list);
+        initListData();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(dialog.getContext());
+
+        adapter = new ReminderAdapter(this);
+        adapter.setList(list);
+        adapter.setOnMainRecycleOnClickListener(onItenClick);
+        rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        rv.setLayoutManager(layoutManager);
+        rv.setHasFixedSize(true);
+        rv.setAdapter(adapter);
+
         builder.setNegativeButton("cancel", null);
         builder.setPositiveButton("save", null);
         builder.show();
     }
+
+    public void onItemClick(int pos){
+        for(int i=0;i<list.size();i++){
+            //首先定位到需要修改数据项
+
+            if(i==pos && pos!=6){
+                if(list.get(pos).getIsCheck()==1){
+                    list.get(pos).setIsCheck(0);
+                }
+                else {
+                    list.get(pos).setIsCheck(1);
+                }
+            } else{
+                list.get(i).setIsCheck(0);
+            }
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+
+
+    private void initListData() {
+        list.add(new ReminderListItem("minutes before", 0));
+        list.add(new ReminderListItem("hours before",0));
+        list.add(new ReminderListItem("days before", 0));
+        list.add(new ReminderListItem("weeks before", 0));
+    }
+
 
     public void getDate(View v,int buttonType) {
         if (buttonType == FROM) {

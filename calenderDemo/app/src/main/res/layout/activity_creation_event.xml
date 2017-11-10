@@ -204,8 +204,8 @@
                 <ImageView
                     android:layout_gravity="left"
                     style="@style/EditEventCustomActionButtonImage"
-                    android:src="@drawable/ic_action_name" />
-                <TextView
+                    android:src="@drawable/ic_action_cancel" />
+                <Button
                     android:text="cancel"
                     style="@style/EditEventCustomActionButtonText" />
             </LinearLayout>
