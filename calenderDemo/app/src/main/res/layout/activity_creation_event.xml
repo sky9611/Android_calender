@@ -206,6 +206,10 @@
                     style="@style/EditEventCustomActionButtonImage"
                     android:src="@drawable/img_arrow_left" />
                 <TextView
+=======
+                    android:src="@drawable/ic_action_cancel" />
+                <Button
+>>>>>>> 8af8c445a4bfb0011466c2feb23a6ac7cccdc381
                     android:text="cancel"
                     style="@style/EditEventCustomActionButtonText" />
             </LinearLayout>

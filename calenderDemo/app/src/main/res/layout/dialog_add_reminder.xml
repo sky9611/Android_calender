@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableLayout
+    android:id="@+id/dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,6 +16,13 @@
             android:hint="" />
     </TableRow>
     <TableRow>
-
+        <!--<ListView-->
+            <!--android:id="@+id/reminder_type_list"-->
+            <!--style="@style/ShowReminderType"/>-->
+        <android.support.v7.widget.recyclerview
+            android:id="@+id/reminder_type_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ShowReminderType"/>
     </TableRow>
 </TableLayout>
