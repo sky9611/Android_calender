@@ -204,7 +204,7 @@
                 <ImageView
                     android:layout_gravity="left"
                     style="@style/EditEventCustomActionButtonImage"
-                    android:src="@drawable/ic_action_name" />
+                    android:src="@drawable/img_arrow_left" />
                 <TextView
                     android:text="cancel"
                     style="@style/EditEventCustomActionButtonText" />
