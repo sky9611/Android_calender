@@ -2,6 +2,7 @@ package com.example.wth.application;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.icu.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,9 +29,10 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 
-public class CreationEventActivity extends AppCompatActivity {
+public class CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainRecycleViewClickListener{
     TextView from_date = null;
     TextView from_time = null;
+    private String reminderType;
     private static final int FROM = 0;
     private static final int TO = 1;
     private static final int YEAR = Calendar.getInstance().get(Calendar.YEAR);
@@ -55,7 +57,7 @@ public class CreationEventActivity extends AppCompatActivity {
     private int toMinute = MINUTE;
     private ReminderAdapter adapter;
     private List<ReminderListItem> list = new ArrayList<>();
-    private ReminderAdapter.MainRecycleViewClickListener onItenClick;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,30 +124,36 @@ public class CreationEventActivity extends AppCompatActivity {
 //        lv.setAdapter(adapter);
         //builder.setView()new SingleChoiceItems(new String[]{"minutes before","hours before","days before"},0,null);
         LayoutInflater inflater = getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.dialog_add_reminder,(ViewGroup) findViewById(R.id.dialog));
+        View dialogView = inflater.inflate(R.layout.dialog_add_reminder,null);
         //View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_reminder, null);
         builder.setView(dialogView);
         Dialog dialog = builder.create();
+        final TextView tv = dialogView.findViewById(R.id.reminder_time);
         RecyclerView rv = (RecyclerView) dialogView.findViewById(R.id.reminder_type_list);
         initListData();
         LinearLayoutManager layoutManager = new LinearLayoutManager(dialog.getContext());
 
         adapter = new ReminderAdapter(this);
         adapter.setList(list);
-        adapter.setOnMainRecycleOnClickListener(onItenClick);
+        adapter.setOnMainRecycleOnClickListener(this);
         rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rv.setLayoutManager(layoutManager);
         rv.setHasFixedSize(true);
         rv.setAdapter(adapter);
 
         builder.setNegativeButton("cancel", null);
-        builder.setPositiveButton("save", null);
+        builder.setPositiveButton("save", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                addReminderButton.setText(tv.getText()+" "+reminderType);
+            }
+        });
         builder.show();
     }
 
+    @Override
     public void onItemClick(int pos){
         for(int i=0;i<list.size();i++){
-            //首先定位到需要修改数据项
 
             if(i==pos && pos!=6){
                 if(list.get(pos).getIsCheck()==1){
@@ -153,6 +161,7 @@ public class CreationEventActivity extends AppCompatActivity {
                 }
                 else {
                     list.get(pos).setIsCheck(1);
+                    reminderType = list.get(pos).getTime();
                 }
             } else{
                 list.get(i).setIsCheck(0);
@@ -161,15 +170,13 @@ public class CreationEventActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-
-
     private void initListData() {
+        list.clear();
         list.add(new ReminderListItem("minutes before", 0));
         list.add(new ReminderListItem("hours before",0));
         list.add(new ReminderListItem("days before", 0));
         list.add(new ReminderListItem("weeks before", 0));
     }
-
 
     public void getDate(View v,int buttonType) {
         if (buttonType == FROM) {

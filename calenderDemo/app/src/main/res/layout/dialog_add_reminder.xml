@@ -9,6 +9,7 @@
     android:shrinkColumns="1">
     <TableRow>
         <EditText
+            android:inputType="number"
             android:id="@+id/reminder_time"
             style="@style/TextAppearance.EditEvent_Value"
             android:layout_width="match_parent"
@@ -19,10 +20,11 @@
         <!--<ListView-->
             <!--android:id="@+id/reminder_type_list"-->
             <!--style="@style/ShowReminderType"/>-->
-        <android.support.v7.widget.recyclerview
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/reminder_type_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ShowReminderType"/>
+            style="@style/ShowReminderType">
+        </android.support.v7.widget.RecyclerView>
     </TableRow>
 </TableLayout>

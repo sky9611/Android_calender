@@ -47,7 +47,6 @@ public class ReminderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ((ReminderViewHolder) holder).tvDelayTime.setText(mList.get(position).getTime());
-        //根据check值动态创建对应的item
         if (mList.get(position).getIsCheck() == 1) {
             ((ReminderViewHolder) holder).ivCheck.setVisibility(View.VISIBLE);
             ((ReminderViewHolder) holder).ivCheck.setBackgroundResource(R.drawable.ic_selected);
@@ -77,7 +76,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     class ReminderViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_advance_type_minute) TextView tvDelayTime;
-        @BindView(R.id.iv_check) TextView ivCheck;
+        @BindView(R.id.iv_check) ImageView ivCheck;
 
         private WeakReference<ReminderAdapter> ref;
         private ReminderAdapter reminderAdapter;
@@ -88,7 +87,6 @@ public class ReminderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //执行Item Click事件
                     mListener.onItemClick(getLayoutPosition());
                 }
             });
@@ -107,7 +105,6 @@ public class ReminderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mListener = itemOnClickListener;
     }
 
-    //定义Item事件接口
     public interface MainRecycleViewClickListener {
         void onItemClick(int pos);
     }
