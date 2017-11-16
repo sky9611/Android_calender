@@ -88,10 +88,12 @@ public class CalendarActivity extends AppCompatActivity {
                 }
 
                 TextView textView = (TextView) convertView;
-                textView.setText("item" +"IHM" +position);
+
+                textView.setText("event :" +position);
 
                 return convertView;
             }
+
         });
 
     }
