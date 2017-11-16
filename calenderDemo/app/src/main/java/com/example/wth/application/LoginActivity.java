@@ -62,7 +62,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    private Button testButton;
+    private Button testCreationEventButton;
+    private Button testCalendarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,12 +96,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        testButton = (Button)findViewById(R.id.test_button);
-        testButton.setOnClickListener(new View.OnClickListener(){
+        testCreationEventButton = (Button)findViewById(R.id.test_creationEvent_button);
+        testCreationEventButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
                 Intent i = new Intent(LoginActivity.this , CreationEventActivity.class);
+                startActivity(i);
+            }
+        });
+
+        testCalendarButton = (Button)findViewById(R.id.test_calendar_button);
+        testCalendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(LoginActivity.this , DingdingActivity.class);
                 startActivity(i);
             }
         });

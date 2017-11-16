@@ -73,10 +73,16 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/test_button"
+                android:id="@+id/test_creationEvent_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="test creation of event" />  
+
+            <Button
+                android:id="@+id/test_calendar_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test of calendar" />  
 
         </LinearLayout>
     </ScrollView>
