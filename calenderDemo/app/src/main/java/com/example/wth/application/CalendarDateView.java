@@ -114,7 +114,7 @@ public class CalendarDateView extends ViewPager implements CalendarTopView {
                 if (onItemClickListener != null) {
                     CalendarView view = views.get(position);
                     Object[] obs = view.getSelect();
-                    onItemClickListener.onItemClick((View) obs[0], (int) obs[1], (CalendarBean) obs[2]);
+                    onItemClickListener.onItemClick((View) obs[0], (int) obs[1], (CalendarObject) obs[2]);
                 }
 
                 mCaledarLayoutChangeListener.onLayoutChange(CalendarDateView.this);

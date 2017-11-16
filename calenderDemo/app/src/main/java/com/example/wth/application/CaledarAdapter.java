@@ -5,5 +5,5 @@ import android.view.ViewGroup;
 
 
 public interface CaledarAdapter {
-     View getView(View convertView, ViewGroup parentView, CalendarBean bean);
+     View getView(View convertView, ViewGroup parentView, CalendarObject bean);
 }

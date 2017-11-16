@@ -1,7 +1,7 @@
 package com.example.wth.application;
 
 
-public class CalendarBean {
+public class CalendarObject {
 
     public int year;
     public int month;
@@ -11,7 +11,7 @@ public class CalendarBean {
     public int monthFlag;
 
 
-    public CalendarBean(int year, int moth, int day) {
+    public CalendarObject(int year, int moth, int day) {
         this.year = year;
         this.month = moth;
         this.day = day;

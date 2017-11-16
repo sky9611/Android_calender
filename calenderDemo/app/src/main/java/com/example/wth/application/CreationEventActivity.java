@@ -29,7 +29,8 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 
-public class CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainRecycleViewClickListener{
+public class
+CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainRecycleViewClickListener{
     TextView from_date = null;
     TextView from_time = null;
     private String reminderType;

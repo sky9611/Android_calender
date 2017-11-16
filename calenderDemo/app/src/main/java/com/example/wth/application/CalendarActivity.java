@@ -9,12 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.wth.application.CaledarAdapter;
-import com.example.wth.application.CalendarBean;
-import com.example.wth.application.CalendarDateView;
-import com.example.wth.application.CalendarUtil;
-import com.example.wth.application.CalendarView;
-
 import java.util.Date;
 
 import butterknife.BindView;
@@ -23,7 +17,7 @@ import butterknife.ButterKnife;
 import static com.example.wth.application.Utils.px;
 
 
-public class DingdingActivity extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
 
     @BindView(R.id.calendarDateView)
     CalendarDateView mCalendarDateView;
@@ -40,7 +34,7 @@ public class DingdingActivity extends AppCompatActivity {
 
         mCalendarDateView.setAdapter(new CaledarAdapter() {
             @Override
-            public View getView(View convertView, ViewGroup parentView, CalendarBean bean) {
+            public View getView(View convertView, ViewGroup parentView, CalendarObject bean) {
                 TextView view;
                 if (convertView == null) {
                     convertView = LayoutInflater.from(parentView.getContext()).inflate(R.layout.item_calendar, null);
@@ -63,7 +57,7 @@ public class DingdingActivity extends AppCompatActivity {
 
         mCalendarDateView.setOnItemClickListener(new CalendarView.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int postion, CalendarBean bean) {
+            public void onItemClick(View view, int postion, CalendarObject bean) {
                 mTitle.setText(bean.day + "/" + getDisPlayNumber(bean.month) + "/" + getDisPlayNumber(bean.year));
             }
         });
@@ -90,7 +84,7 @@ public class DingdingActivity extends AppCompatActivity {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 if (convertView == null) {
-                    convertView = LayoutInflater.from(DingdingActivity.this).inflate(android.R.layout.simple_list_item_1, null);
+                    convertView = LayoutInflater.from(CalendarActivity.this).inflate(android.R.layout.simple_list_item_1, null);
                 }
 
                 TextView textView = (TextView) convertView;

@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <!--<activity-->
-            <!--android:name=".DingdingActivity"-->
+            <!--android:namCalendarActivityvity"-->
             <!--android:label="@string/app_name">-->
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
@@ -33,7 +33,7 @@
             <!--</intent-filter>-->
         <!--</activity>-->
         <activity android:name=".CreationEventActivity" />
-        <activity android:name=".DingdingActivity" />
+        <activity android:name=".CalendarActivity" />
     </application>
 
 

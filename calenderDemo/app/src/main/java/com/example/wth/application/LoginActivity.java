@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         testCalendarButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i = new Intent(LoginActivity.this , DingdingActivity.class);
+                Intent i = new Intent(LoginActivity.this , CalendarActivity.class);
                 startActivity(i);
             }
         });

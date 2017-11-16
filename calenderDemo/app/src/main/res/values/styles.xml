@@ -92,13 +92,7 @@
         <item name="android:singleLine">true</item>
     </style>
 
-    <style name="style_calendar_titlebar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/shape_calendar_titlebar</item>
-        <item name="android:layout_gravity">bottom</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
+
 
     <style name="style_calendar_title_gregorian_container">
         <item name="android:layout_width">250dp</item>
@@ -145,12 +139,7 @@
         <item name="android:gravity">bottom|right</item>
     </style>
 
-    <style name="style_calendar_header_container">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/shape_calendar_header</item>
-    </style>
+
 
     <style name="style_calendar_header_text">
         <item name="android:layout_width">wrap_content</item>
@@ -179,30 +168,9 @@
         <item name="android:orientation">vertical</item>
     </style>
 
-    <style name="style_calendar_cell.normal">
-        <item name="android:background">@drawable/shape_calendar_cell_normal</item>
-    </style>
 
-    <style name="style_calendar_cell.outrange">
-        <item name="android:background">@drawable/shape_calendar_cell_outrange</item>
-    </style>
 
-    <style name="style_calendar_cell.today">
-        <item name="android:background">@drawable/shape_calendar_cell_today</item>
-    </style>
 
-    <style name="style_calendar_cell.weekindex">
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:clickable">false</item>
-        <item name="android:focusable">false</item>
-        <item name="android:focusableInTouchMode">false</item>
-        <item name="android:background">@drawable/shape_calendar_cell_weekindex</item>
-    </style>
-
-    <style name="style_calendar_cell.weekend">
-        <item name="android:background">@drawable/shape_calendar_cell_weekend</item>
-    </style>
 
     <style name="style_calendar_gregorian">
         <item name="android:layout_width">wrap_content</item>

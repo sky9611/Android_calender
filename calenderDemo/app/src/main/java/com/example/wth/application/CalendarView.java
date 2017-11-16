@@ -18,7 +18,7 @@ public class CalendarView extends ViewGroup {
     private int selectPostion = -1;
 
     private CaledarAdapter adapter;
-    private List<CalendarBean> data;
+    private List<CalendarObject> data;
     private OnItemClickListener onItemClickListener;
 
     private int row = 6;
@@ -29,7 +29,7 @@ public class CalendarView extends ViewGroup {
     private boolean isToday;
 
     public interface OnItemClickListener {
-        void onItemClick(View view, int postion, CalendarBean bean);
+        void onItemClick(View view, int postion, CalendarObject bean);
     }
 
     public CalendarView(Context context, int row) {
@@ -54,7 +54,7 @@ public class CalendarView extends ViewGroup {
         this.adapter = adapter;
     }
 
-    public void setData(List<CalendarBean> data,boolean isToday) {
+    public void setData(List<CalendarObject> data, boolean isToday) {
         this.data = data;
         this.isToday=isToday;
         setItem();
@@ -65,11 +65,11 @@ public class CalendarView extends ViewGroup {
 
         selectPostion = -1;
         if (adapter == null) {
-            throw new RuntimeException("adapter is null,please setadapter");
+            throw new RuntimeException("Error adapter null!!!");
         }
 
         for (int i = 0; i < data.size(); i++) {
-            CalendarBean bean = data.get(i);
+            CalendarObject bean = data.get(i);
             View view = getChildAt(i);
             View chidView = adapter.getView(view, this, bean);
 
@@ -99,7 +99,7 @@ public class CalendarView extends ViewGroup {
          return new Object[]{getChildAt(selectPostion),selectPostion,data.get(selectPostion)};
     }
 
-    public void setItemClick(final View view, final int potsion, final CalendarBean bean) {
+    public void setItemClick(final View view, final int potsion, final CalendarObject bean) {
         view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
