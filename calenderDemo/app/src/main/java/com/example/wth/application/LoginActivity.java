@@ -113,6 +113,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 startActivity(i);
             }
         });
+
+        testCalendarButton = (Button)findViewById(R.id.test_menu_button);
+        testCalendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(LoginActivity.this , MenuActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void populateAutoComplete() {

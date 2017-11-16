@@ -8,8 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="TextAppearance" parent="android:TextAppearance">
-    </style>
+    <style name="TextAppearance" parent="android:TextAppearance"></style>
 
     <style name="TextAppearance.EditEvent_Label">
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
@@ -93,7 +92,6 @@
     </style>
 
 
-
     <style name="style_calendar_title_gregorian_container">
         <item name="android:layout_width">250dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -101,6 +99,7 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:gravity">center_vertical</item>
     </style>
+
     <style name="style_calendar_title_gregorian_text">
         <item name="android:layout_width">164dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -140,7 +139,6 @@
     </style>
 
 
-
     <style name="style_calendar_header_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -167,9 +165,6 @@
         <item name="android:onClick">onCellClick</item>
         <item name="android:orientation">vertical</item>
     </style>
-
-
-
 
 
     <style name="style_calendar_gregorian">
@@ -219,5 +214,15 @@
     <style name="style_calendar_lunar.weekend">
         <item name="android:textColor">@color/color_calendar_weekend</item>
     </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
