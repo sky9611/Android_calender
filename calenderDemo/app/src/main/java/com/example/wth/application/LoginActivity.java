@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
     private Button testCreationEventButton;
     private Button testCalendarButton;
+    private Button testMenuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,8 +115,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        testCalendarButton = (Button)findViewById(R.id.test_menu_button);
-        testCalendarButton.setOnClickListener(new View.OnClickListener(){
+        testMenuButton = (Button)findViewById(R.id.test_menu_button);
+        testMenuButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent i = new Intent(LoginActivity.this , MenuActivity.class);
