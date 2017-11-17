@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.wth.application.MenuActivity"
+    tools:context="com.example.wth.application.CalendarActivity"
     tools:showIn="@layout/app_bar_menu" >
 
-    <LinearLayout
-        android:id="@+id/weeks"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp" />
+    <!--<LinearLayout-->
+        <!--android:id="@+id/weeks"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingBottom="8dp"-->
+        <!--android:paddingTop="8dp" />-->
 
-    <View
-        android:id="@+id/weekline"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_below="@+id/weeks"
-        android:background="#dddddd"
-        />
+    <!--<View-->
+        <!--android:id="@+id/weekline"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1px"-->
+        <!--android:layout_below="@+id/weeks"-->
+        <!--android:background="#dddddd"-->
+        <!--/>-->
     <!--
     <com.ucg.app.calendar.view.CalendarLayout
         android:id="@+id/calendarLayout"
