@@ -9,6 +9,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,7 +22,9 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,16 +36,19 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
 
     @BindView(R.id.calendarDateView)
     CalendarDateView mCalendarDateView;
-    @BindView(R.id.list)
-    ListView mList;
+    @BindView(R.id.event_list)
+    RecyclerView mList;
     @BindView(R.id.title)
     TextView mTitle;
+    EventAdapter adapter;
 
     private FloatingActionButton fab;
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
+
+
 
     private void initView() {
         fab = findViewById(R.id.fab);
@@ -100,42 +108,24 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onItemClick(View view, int postion, CalendarObject bean) {
                 mTitle.setText(bean.day + "/" + getDisPlayNumber(bean.month) + "/" + getDisPlayNumber(bean.year));
+
             }
         });
 
         int[] data = CalendarUtil.getYMD(new Date());
         mTitle.setText(data[2] + "/" + data[1] + "/" + data[0]);
-
-        mList.setAdapter(new BaseAdapter() {
-            @Override
-            public int getCount() {
-                return 100;
-            }
-
-            @Override
-            public Object getItem(int position) {
-                return null;
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return 0;
-            }
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(CalendarActivity.this).inflate(android.R.layout.simple_list_item_1, null);
-                }
-
-                TextView textView = (TextView) convertView;
-
-                textView.setText("event :" +position);
-
-                return convertView;
-            }
-
-        });
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        List<EventItem> list = new ArrayList<>();
+        list.add(new EventItem("aaa"));
+        list.add(new EventItem("vvv"));
+        list.add(new EventItem("ccc"));
+        list.add(new EventItem("ddd"));
+        adapter = new EventAdapter(this);
+        adapter.setList(list);
+        mList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        mList.setLayoutManager(layoutManager);
+        mList.setHasFixedSize(true);
+        mList.setAdapter(adapter);
 
     }
 
