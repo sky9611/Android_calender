@@ -23,8 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreationEventActivity"></activity>
-        <activity android:name=".EventChanges"></activity>
+        <activity android:name=".CreationEventActivity" />
+        <activity android:name=".EventChangesDialog" />
+        <activity android:name=".EventChangesActivity" />
     </application>
 
 </manifest>

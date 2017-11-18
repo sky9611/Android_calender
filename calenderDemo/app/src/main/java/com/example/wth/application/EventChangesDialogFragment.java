@@ -3,6 +3,7 @@ package com.example.wth.application;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
@@ -20,6 +21,9 @@ public class EventChangesDialogFragment extends DialogFragment {
                 .setPositiveButton("Consulter", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Open notification list
+                        EventChangesDialog ecd = (EventChangesDialog) getActivity();
+                        ecd.OnPositiveButton();
+
                     }
                 });
         return builder.create();

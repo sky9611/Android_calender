@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View v){
                 //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
-                Intent i = new Intent(LoginActivity.this , CreationEventActivity.class);
+                Intent i = new Intent(LoginActivity.this , EventChangesDialog.class);
                 startActivity(i);
             }
         });
