@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\INSA\4A\ihm\tp\Android_calender\calenderDemo\app\app.iml" filepath="E:\INSA\4A\ihm\tp\Android_calender\calenderDemo\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/calenderDemo.iml" filepath="$PROJECT_DIR$/calenderDemo.iml" />
+      <module fileurl="file://E:\INSA\4A\ihm\tp\Android_calender\calenderDemo\calenderDemo.iml" filepath="E:\INSA\4A\ihm\tp\Android_calender\calenderDemo\calenderDemo.iml" />
     </modules>
   </component>
 </project>
