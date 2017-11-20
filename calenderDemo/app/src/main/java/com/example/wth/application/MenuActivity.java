@@ -84,7 +84,7 @@ public class MenuActivity extends AppCompatActivity
         if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_groupes) {
-            Intent intent=new Intent(MenuActivity.this,EventDetailActivity.class);
+            Intent intent=new Intent(MenuActivity.this,Mes_groupes.class);
             startActivity(intent);
         } else if (id == R.id.nav_options) {
             Intent intent=new Intent(MenuActivity.this,SettingsActivity.class);

@@ -117,11 +117,13 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         List<EventItem> list = new ArrayList<>();
 
+        if (data[2]==19) {
             list.add(new EventItem("aaa"));
             list.add(new EventItem("vvv"));
             list.add(new EventItem("ccc"));
             list.add(new EventItem("ddd"));
             list.add(new EventItem("yy"));
+        }
 
 
         adapter = new EventAdapter(this);
@@ -174,7 +176,7 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
 
         } else if (id == R.id.nav_groupes) {
             System.out.println("Click on groupes");
-            Intent intent=new Intent(CalendarActivity.this,EventDetailActivity.class);
+            Intent intent=new Intent(CalendarActivity.this,Mes_groupes.class);
             startActivity(intent);
         } else if (id == R.id.nav_options) {
             Intent intent=new Intent(CalendarActivity.this,SettingsActivity.class);

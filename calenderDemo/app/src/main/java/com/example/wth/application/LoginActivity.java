@@ -30,6 +30,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.wth.application.dummy.DummyContent;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private Button testCreationEventButton;
     private Button testCalendarButton;
     private Button testMenuButton;
+    private Button testPopupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +123,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View v){
                 Intent i = new Intent(LoginActivity.this , MenuActivity.class);
+                startActivity(i);
+            }
+        });
+
+        testPopupButton = (Button)findViewById(R.id.test_popup_button);
+        testPopupButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(LoginActivity.this ,EventChangesActivity.class);
                 startActivity(i);
             }
         });
