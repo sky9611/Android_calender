@@ -25,7 +25,7 @@
         </activity>
         <activity android:name=".CreationEventActivity" />
         <activity android:name=".EventChangesDialog" />
-        <activity android:name=".EventChangesActivity" />
+        <activity android:name=".EventChangesActivity" android:label="Notifications"/>
     </application>
 
 </manifest>
