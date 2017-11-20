@@ -116,10 +116,14 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
         mTitle.setText(data[2] + "/" + data[1] + "/" + data[0]);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         List<EventItem> list = new ArrayList<>();
-        list.add(new EventItem("aaa"));
-        list.add(new EventItem("vvv"));
-        list.add(new EventItem("ccc"));
-        list.add(new EventItem("ddd"));
+
+            list.add(new EventItem("aaa"));
+            list.add(new EventItem("vvv"));
+            list.add(new EventItem("ccc"));
+            list.add(new EventItem("ddd"));
+            list.add(new EventItem("yy"));
+
+
         adapter = new EventAdapter(this);
         adapter.setList(list);
         mList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
