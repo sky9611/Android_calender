@@ -11,9 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.wth.application.dummy.DummyContent;
-import com.example.wth.application.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import com.example.wth.application.dummy.DummyContent.EventChange;
 
 /**
  * A fragment representing a list of Items.
@@ -104,6 +102,6 @@ public class EventChangesListFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(EventChange item);
     }
 }
