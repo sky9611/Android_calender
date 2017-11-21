@@ -50,6 +50,25 @@ public class Groupe1 extends AppCompatActivity{
                 }, 10000);
             }});
 
+        Button ajoutermembre = findViewById(R.id.ajoutermembre);
+        ajoutermembre.setOnClickListener(new OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Groupe1.this , CreationEventActivity.class);
+                startActivity(i);
+            }});
+
+        Button ajouterevent = findViewById(R.id.ajouterevent);
+        ajoutermembre.setOnClickListener(new OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Groupe1.this , CreationEventActivity.class);
+                startActivity(i);
+            }});
+
+
     }
 
     private void setupActionBar() {
