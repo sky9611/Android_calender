@@ -130,6 +130,7 @@
     <string name="evenement_name">Interaction Homme Machine</string>
     <string name="evenement_time">aujourd\'hui\n8:00-12:00</string>
     <string name="evenement_alerte">ajouter l\'alerte</string>
+    <string name="title_activity_add_member">AddMember</string>
 
 
 </resources>
