@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.josstheboss.calendar_partie_oussama.CreationGroupActivity">
+    tools:context="com.example.wth.application.CreationGroupActivity">
 
     <LinearLayout
 
@@ -32,7 +32,7 @@
                 android:layout_weight="0.3"
                 android:background="@null"
                 android:baselineAligned="false"
-                android:onClick="confirmer"
+                android:onClick="retour"
                 android:scaleType="fitStart"
                 app:srcCompat="@drawable/img_arrow_left" />
 
