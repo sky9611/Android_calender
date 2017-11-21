@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -152,7 +153,9 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+        MenuItem searchItem = menu.findItem(R.id.action_settings);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

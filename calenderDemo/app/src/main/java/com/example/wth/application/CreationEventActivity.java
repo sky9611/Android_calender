@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.icu.util.Calendar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.ListMenuItemView;
@@ -62,6 +63,7 @@ CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainR
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupActionBar();
         setContentView(R.layout.activity_creation_event);
         ButterKnife.bind(this);
         initView();
@@ -235,5 +237,17 @@ CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainR
     }
     private void showToTime() {
         setToTimeButtom.setText(toHoure+":"+toMinute);
+    }
+
+    private void setupActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }
