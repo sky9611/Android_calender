@@ -44,14 +44,14 @@ public class Groupe1 extends AppCompatActivity{
                     }
                 }, 10000);
             }});
-        Button addEvent = findViewById(R.id.button_add_event);
+        /* Button addEvent = findViewById(R.id.button_add_event);
         addEvent.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent i = new Intent(Groupe1.this ,CreationEventActivity.class);
                 startActivity(i);
             }
-        });
+        }); */
 
         Button ajoutermembre = findViewById(R.id.ajoutermembre);
         ajoutermembre.setOnClickListener(new OnClickListener(){
