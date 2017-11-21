@@ -56,6 +56,7 @@
             android:name="com.example.wth.test.AddMember"
             android:label="@string/title_activity_add_member"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Mes_groupes2"></activity>
     </application>
 
 </manifest>
