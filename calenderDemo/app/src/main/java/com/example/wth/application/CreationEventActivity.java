@@ -3,6 +3,7 @@ package com.example.wth.application;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +48,7 @@ CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainR
     private Button setToDateButtom;
     private Button setToTimeButtom;
     private Button addReminderButton;
+    private Button saveButton;
     private int fromYear = YEAR;
     private int fromMonth = MONTH_OF_YEAR;
     private int fromDay = DAY_OF_MONTH;
@@ -67,6 +69,14 @@ CreationEventActivity extends AppCompatActivity implements ReminderAdapter.MainR
         setContentView(R.layout.activity_creation_event);
         ButterKnife.bind(this);
         initView();
+
+        saveButton = (Button)findViewById(R.id.button_save_event);
+        saveButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
     }
 
     private void initView() {

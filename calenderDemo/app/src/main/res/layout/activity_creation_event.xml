@@ -198,17 +198,6 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:orientation="horizontal">
-            <LinearLayout
-                android:id="@+id/action_cancel"
-                style="@style/EditEventCustomActionButton">
-                <ImageView
-                    android:layout_gravity="left"
-                    style="@style/EditEventCustomActionButtonImage"
-                    android:src="@drawable/ic_action_cancel" />
-                <Button
-                    android:text="cancel"
-                    style="@style/EditEventCustomActionButtonText" />
-            </LinearLayout>
 
             <!-- id must match corresponding menu item id -->
             <LinearLayout
@@ -218,9 +207,11 @@
                     android:layout_gravity="left"
                     style="@style/EditEventCustomActionButtonImage"
                     android:src="@drawable/ic_action_save" />
+
                 <Button
-                    android:text="Save"
-                    style="@style/EditEventCustomActionButtonText" />
+                    android:id="@+id/button_save_event"
+                    style="@style/EditEventCustomActionButtonText"
+                    android:text="Save" />
             </LinearLayout>
         </LinearLayout>
     </TableLayout>
