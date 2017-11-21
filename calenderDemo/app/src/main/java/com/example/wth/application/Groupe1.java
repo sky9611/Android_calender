@@ -18,21 +18,16 @@ import android.widget.LinearLayout;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.view.View;
+
+import com.example.wth.test.AddMember;
+
 public class Groupe1 extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupActionBar();
         setContentView(R.layout.activity_groupe1);
-        ImageButton retour = findViewById(R.id.retour);
-        retour.setOnClickListener(new OnClickListener(){
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public void onClick(View view) {
-                finish();
-            }});
         Button quittergroupe = findViewById(R.id.quittergroupe);
-
         quittergroupe.setOnClickListener(new OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
@@ -49,13 +44,21 @@ public class Groupe1 extends AppCompatActivity{
                     }
                 }, 10000);
             }});
+        Button addEvent = findViewById(R.id.button_add_event);
+        addEvent.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(Groupe1.this ,CreationEventActivity.class);
+                startActivity(i);
+            }
+        });
 
         Button ajoutermembre = findViewById(R.id.ajoutermembre);
         ajoutermembre.setOnClickListener(new OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Groupe1.this , CreationEventActivity.class);
+                Intent i = new Intent(Groupe1.this , AddMember.class);
                 startActivity(i);
             }});
 

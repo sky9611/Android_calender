@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true">
 
+<<<<<<< HEAD
             <ImageButton
                 android:id="@+id/retour"
                 style="?android:attr/borderlessButtonStyle"
@@ -31,6 +32,8 @@
                 android:src="@drawable/ic_back"
                 />
 
+=======
+>>>>>>> 7e0d9c60aad305d3fffbe0d0d3b1403885e23885
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_gravity="end"
@@ -274,20 +277,23 @@
                 android:src="@drawable/ic_action_name"/>
 
             <Button
+<<<<<<< HEAD
                 android:id="@+id/ajouterevent"
+=======
+                android:id="@+id/button_add_event"
+>>>>>>> 7e0d9c60aad305d3fffbe0d0d3b1403885e23885
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:background="#FFF"
-                android:textStyle="normal"
-                android:layout_marginTop="10sp"
                 android:layout_marginLeft="5sp"
+                android:layout_marginTop="10sp"
+                android:background="#FFF"
                 android:minHeight="0dp"
                 android:minWidth="0dp"
-                android:textSize="14sp"
-                android:textAllCaps="false"
                 android:text="Ajouter un événement"
-                />
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="normal" />
         </LinearLayout>
 
         <LinearLayout

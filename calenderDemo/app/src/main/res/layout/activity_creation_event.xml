@@ -20,7 +20,8 @@
             <TextView
                 android:id="@+id/event_name_label"
                 style="@style/TextAppearance.EditEvent_Label"
-                android:text="Title" />
+                android:text="Title"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/titre"
@@ -33,9 +34,11 @@
         <!-- WHERE -->
         <TableRow android:id="@+id/where_row"
             android:focusable="true">
+
             <TextView
+                style="@style/TextAppearance.EditEvent_Label"
                 android:text="Place"
-                style="@style/TextAppearance.EditEvent_Label" />
+                android:textColor="@android:color/black" />
             <AutoCompleteTextView
                 android:id="@+id/location"
                 android:singleLine="false"
@@ -46,10 +49,12 @@
         <!--From-->
         <TableRow
             android:id="@+id/from_row">
+
             <TextView
                 android:id="@+id/from_label"
+                style="@style/TextAppearance.EditEvent_Label"
                 android:text="From"
-                style="@style/TextAppearance.EditEvent_Label"/>
+                android:textColor="@android:color/black" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:animateLayoutChanges="false">
@@ -97,10 +102,12 @@
         <!--To-->
         <TableRow
             android:id="@+id/to_row">
+
             <TextView
                 android:id="@+id/to_label"
+                style="@style/TextAppearance.EditEvent_Label"
                 android:text="To"
-                style="@style/TextAppearance.EditEvent_Label" />
+                android:textColor="@android:color/black" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:animateLayoutChanges="false">
@@ -149,10 +156,12 @@
         <TableRow
             android:id="@+id/alarm_eow"
             android:focusable="true">
+
             <TextView
                 android:id="@+id/alarm_label"
+                style="@style/TextAppearance.EditEvent_Label"
                 android:text="Alarm"
-                style="@style/TextAppearance.EditEvent_Label"/>
+                android:textColor="@android:color/black" />
             <LinearLayout
                 android:orientation="vertical"
                 android:gravity="center_vertical|right"
@@ -182,10 +191,12 @@
         <!-- DESCRIPTION -->
         <TableRow android:id="@+id/description_row"
             android:focusable="true">
+
             <TextView
                 android:id="@+id/description_label"
+                style="@style/TextAppearance.EditEvent_Label"
                 android:text="Description"
-                style="@style/TextAppearance.EditEvent_Label" />
+                android:textColor="@android:color/black" />
             <EditText
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
