@@ -40,6 +40,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ReminderViewHolder viewHolder = new ReminderViewHolder(mLayoutInflater.inflate(R.layout.recycler_view, parent, false));
+
         viewHolder.setDelayAdapter(this);
         return viewHolder;
     }
@@ -83,6 +84,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         ReminderViewHolder(View itemView) {
             super(itemView);
+            //tvEvent.setTextSize(100);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

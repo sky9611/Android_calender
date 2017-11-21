@@ -111,18 +111,21 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
             public void onItemClick(View view, int position, CalendarObject bean) {
                 mTitle.setText(bean.day + "/" + getDisPlayNumber(bean.month) + "/" + getDisPlayNumber(bean.year));
                 list.clear();
+                //mList.removeAllViews();
                 if (position==18) {
-                    list.add(new EventItem("Projet Prolog 16/11/2017 14h00/16h00"));
-                    list.add(new EventItem("Projet IHM 16/11/2017 16h00/18h00"));
+                    list.add(new EventItem("Projet Prolog 14h00/16h00"));
+                    list.add(new EventItem("Projet IHM 16h00/18h00"));
                 }
                 if (position==19) {
-                    list.add(new EventItem("Projet Prolog 17/11/2017 14h00/16h00"));
+                    list.add(new EventItem("Projet Prolog 14h00/16h00"));
                 }
+
                 adapter = new EventAdapter(view.getContext());
                 adapter.setList(list);
-                mList.addItemDecoration(new DividerItemDecoration(view.getContext(), DividerItemDecoration.VERTICAL));
+                //mList.addItemDecoration(new DividerItemDecoration(view.getContext(), DividerItemDecoration.VERTICAL));
                 mList.setLayoutManager(layoutManager);
                 mList.setHasFixedSize(true);
+
                 mList.setAdapter(adapter);
 
             }
