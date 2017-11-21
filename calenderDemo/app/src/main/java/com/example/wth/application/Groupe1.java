@@ -24,15 +24,7 @@ public class Groupe1 extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setupActionBar();
         setContentView(R.layout.activity_groupe1);
-        ImageButton retour = findViewById(R.id.retour);
-        retour.setOnClickListener(new OnClickListener(){
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public void onClick(View view) {
-                finish();
-            }});
         Button quittergroupe = findViewById(R.id.quittergroupe);
-
         quittergroupe.setOnClickListener(new OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
@@ -49,6 +41,14 @@ public class Groupe1 extends AppCompatActivity{
                     }
                 }, 10000);
             }});
+        Button addEvent = findViewById(R.id.button_add_event);
+        addEvent.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(Groupe1.this ,CreationEventActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 
