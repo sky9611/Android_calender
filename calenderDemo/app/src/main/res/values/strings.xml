@@ -12,7 +12,7 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="desc_previous_month">previous month</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Chercher</string>
     <string name="demo">demo</string>
     <string name="desc_next_month">next month</string>
     <string name="desc_today">return to today</string>
