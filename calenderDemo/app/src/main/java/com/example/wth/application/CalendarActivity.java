@@ -47,7 +47,8 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
-
+    private List<EventItem> list = new ArrayList<>();
+    LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
 
     private void initView() {
@@ -106,25 +107,28 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
 
         mCalendarDateView.setOnItemClickListener(new CalendarView.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int postion, CalendarObject bean) {
+            public void onItemClick(View view, int position, CalendarObject bean) {
                 mTitle.setText(bean.day + "/" + getDisPlayNumber(bean.month) + "/" + getDisPlayNumber(bean.year));
+                list.clear();
+                if (position==18) {
+                    list.add(new EventItem("Projet Prolog 16/11/2017 14h00/16h00"));
+                    list.add(new EventItem("Projet IHM 16/11/2017 16h00/18h00"));
+                }
+                if (position==19) {
+                    list.add(new EventItem("Projet Prolog 17/11/2017 14h00/16h00"));
+                }
+                adapter = new EventAdapter(view.getContext());
+                adapter.setList(list);
+                mList.addItemDecoration(new DividerItemDecoration(view.getContext(), DividerItemDecoration.VERTICAL));
+                mList.setLayoutManager(layoutManager);
+                mList.setHasFixedSize(true);
+                mList.setAdapter(adapter);
 
             }
         });
 
         int[] data = CalendarUtil.getYMD(new Date());
         mTitle.setText(data[2] + "/" + data[1] + "/" + data[0]);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        List<EventItem> list = new ArrayList<>();
-
-        if (data[2]==19) {
-            list.add(new EventItem("aaa"));
-            list.add(new EventItem("vvv"));
-            list.add(new EventItem("ccc"));
-            list.add(new EventItem("ddd"));
-            list.add(new EventItem("yy"));
-        }
-
 
         adapter = new EventAdapter(this);
         adapter.setList(list);
