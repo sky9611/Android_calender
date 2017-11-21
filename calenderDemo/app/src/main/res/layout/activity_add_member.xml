@@ -21,8 +21,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
-        layout="@layout/content_add_member"
-        android:layout_width="457dp" />
+        layout="@layout/content_add_member"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

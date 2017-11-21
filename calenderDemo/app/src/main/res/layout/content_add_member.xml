@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Nom du Membre" />
+            android:text="Ye YUAN" />
 
         <Button
             android:id="@+id/button"
