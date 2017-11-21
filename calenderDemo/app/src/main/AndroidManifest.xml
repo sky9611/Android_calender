@@ -44,7 +44,7 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".EventDetailActivity" />
+
         <activity android:name=".Mes_groupes"></activity>
         <activity android:name=".Groupe1">
             android:parentActivityName=".Mes_groupes"
@@ -53,7 +53,7 @@
         <activity android:name=".EventChangesActivity" />
         <activity android:name=".CreationGroupActivity"></activity>
         <activity
-            android:name="com.example.wth.test.AddMember"
+            android:name=".AddMember"
             android:label="@string/title_activity_add_member"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Mes_groupes2"></activity>

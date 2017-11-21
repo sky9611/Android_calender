@@ -63,6 +63,12 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="se souvenir de moi" />  
+
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
@@ -76,25 +82,32 @@
                 android:id="@+id/test_creationEvent_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test creation of event" />  
+                android:text="test creation of event"
+                android:visibility="invisible" />  
 
             <Button
                 android:id="@+id/test_calendar_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test of calendar" />
+                android:text="test of calendar"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/test_menu_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Test of menu" />
+                android:text="Test of menu"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/test_popup_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />  
+                android:elevation="0dp"
+                android:text="test Popup"
+                android:textAlignment="viewStart" />
+
+
 
         </LinearLayout>
     </ScrollView>

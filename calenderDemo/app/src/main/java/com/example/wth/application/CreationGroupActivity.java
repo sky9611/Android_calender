@@ -2,14 +2,13 @@ package com.example.wth.application;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
-import com.example.wth.test.AddMember;
 
 
 public class CreationGroupActivity extends AppCompatActivity {
@@ -21,6 +20,7 @@ public class CreationGroupActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupActionBar();
         setContentView(R.layout.activity_creation_group);
         // nom = (EditText) findViewById(R.id.groupe_name_label);
         //desctiption = (EditText) findViewById(R.id.groupe_name_label);
@@ -46,6 +46,16 @@ public class CreationGroupActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-
+    private void setupActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 
 }

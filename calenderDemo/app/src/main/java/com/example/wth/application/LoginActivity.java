@@ -64,9 +64,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    private Button testCreationEventButton;
-    private Button testCalendarButton;
-    private Button testMenuButton;
+//    private Button testCreationEventButton;
+//    private Button testCalendarButton;
+//    private Button testMenuButton;
     private Button testPopupButton;
 
     @Override
@@ -93,39 +93,40 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                Intent i = new Intent(LoginActivity.this , CalendarActivity.class);
+                startActivity(i);
             }
         });
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        testCreationEventButton = (Button)findViewById(R.id.test_creationEvent_button);
-        testCreationEventButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent i = new Intent(LoginActivity.this , CreationEventActivity.class);
-                startActivity(i);
-            }
-        });
-
-        testCalendarButton = (Button)findViewById(R.id.test_calendar_button);
-        testCalendarButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent i = new Intent(LoginActivity.this , CalendarActivity.class);
-                startActivity(i);
-            }
-        });
-
-        testMenuButton = (Button)findViewById(R.id.test_menu_button);
-        testMenuButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent i = new Intent(LoginActivity.this , MenuActivity.class);
-                startActivity(i);
-            }
-        });
+//        testCreationEventButton = (Button)findViewById(R.id.test_creationEvent_button);
+//        testCreationEventButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent i = new Intent(LoginActivity.this , CreationEventActivity.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        testCalendarButton = (Button)findViewById(R.id.test_calendar_button);
+//        testCalendarButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent i = new Intent(LoginActivity.this , CalendarActivity.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        testMenuButton = (Button)findViewById(R.id.test_menu_button);
+//        testMenuButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent i = new Intent(LoginActivity.this , MenuActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
         testPopupButton = (Button)findViewById(R.id.test_popup_button);
         testPopupButton.setOnClickListener(new View.OnClickListener(){

@@ -1,25 +1,16 @@
 package com.example.wth.application;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
-import android.widget.LinearLayout;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.view.View;
-
-import com.example.wth.test.AddMember;
 
 public class Groupe1 extends AppCompatActivity{
     @Override

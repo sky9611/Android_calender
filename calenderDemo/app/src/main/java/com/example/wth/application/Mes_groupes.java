@@ -30,6 +30,7 @@ public class Mes_groupes extends AppCompatActivity{
         final Button newgroup = findViewById(R.id.newgroup);
         final ImageButton refusegroup = findViewById(R.id.refusegroup);
         final ImageButton addgroup = findViewById(R.id.addgroup);
+        final TextView invitation = findViewById(R.id.textboard_invitation);
 
         Button activite1 = (Button)findViewById(R.id.group1);
         activite1.setOnClickListener(new OnClickListener(){
@@ -70,6 +71,7 @@ public class Mes_groupes extends AppCompatActivity{
                 addgroup.setVisibility(View.GONE);
                 newgroup.setVisibility(View.GONE);
                 refusegroup.setVisibility(View.GONE);
+                invitation.setVisibility(View.GONE);
 
             }
         });
@@ -81,7 +83,7 @@ public class Mes_groupes extends AppCompatActivity{
                 addgroup.setVisibility(View.GONE);
                 newgroup.setVisibility(View.GONE);
                 refusegroup.setVisibility(View.GONE);
-
+                invitation.setVisibility(View.GONE);
             }
         });
 
@@ -95,7 +97,8 @@ public class Mes_groupes extends AppCompatActivity{
     }
     @Override
     public boolean onSupportNavigateUp() {
-        finish();
+        Intent i = new Intent(Mes_groupes.this , CalendarActivity.class);
+        startActivity(i);
         return super.onSupportNavigateUp();
     }
 
