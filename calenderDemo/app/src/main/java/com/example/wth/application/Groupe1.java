@@ -63,7 +63,7 @@ public class Groupe1 extends AppCompatActivity{
             }});
 
         Button ajouterevent = findViewById(R.id.ajouterevent);
-        ajoutermembre.setOnClickListener(new OnClickListener(){
+        ajouterevent.setOnClickListener(new OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view) {
