@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         testPopupButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i = new Intent(LoginActivity.this ,EventChangesActivity.class);
+                Intent i = new Intent(LoginActivity.this ,EventChangesDialog.class);
                 startActivity(i);
             }
         });
