@@ -13,7 +13,6 @@ public class CalendarFactory {
 
     private static HashMap<String, List<CalendarObject>> cache = new HashMap<>();
 
-    //获取一月中的集合
     public static List<CalendarObject> getMonthOfDayList(int y, int m) {
 
         String key=y+""+m;
@@ -29,24 +28,20 @@ public class CalendarFactory {
         List<CalendarObject> list = new ArrayList<CalendarObject>();
         cache.put(key,list);
 
-        //计算出一月第一天是星期几
         int fweek = getDayOfWeek(y, m, 1);
         int total = CalendarUtil.getDayOfMaonth(y, m);
 
-        //根据星期推出前面还有几个显示
         for (int i = fweek - 1; i > 0; i--) {
             CalendarObject bean = geCalendarBean(y, m, 1 - i);
             bean.monthFlag = -1;
             list.add(bean);
         }
 
-        //获取当月的天数
         for (int i = 0; i < total; i++) {
             CalendarObject bean = geCalendarBean(y, m, i + 1);
             list.add(bean);
         }
 
-        //为了塞满42个格子，显示多出当月的天数
         for (int i = 0; i < 42 - (fweek - 1) - total; i++) {
             CalendarObject bean = geCalendarBean(y, m, total + i + 1);
             bean.monthFlag = 1;

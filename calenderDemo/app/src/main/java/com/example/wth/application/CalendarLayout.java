@@ -25,13 +25,10 @@ public class CalendarLayout extends FrameLayout {
     private View view1;
     private ViewGroup view2;
     private CalendarTopView mTopView;
-    //展开
     public static final int TYPE_OPEN = 0;
-    //折叠
     public static final int TYPE_FOLD = 1;
     public int type = TYPE_FOLD;
 
-    //是否处于滑动中
     private boolean isSilde = false;
 
     private int topHeigth;
@@ -127,7 +124,6 @@ public class CalendarLayout extends FrameLayout {
 //        mViewDragHelper.shouldInterceptTouchEvent(ev);
         boolean isflag = false;
 
-        //上下运动进行拦截
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 oy = ev.getY();
@@ -157,17 +153,14 @@ public class CalendarLayout extends FrameLayout {
                     if (isClickBtottomView) {
                         boolean isScroll = isScroll(view2);
                         if (ydiff > 0) {
-                            //向下
                             if (type == TYPE_OPEN) {
                                 return super.onInterceptTouchEvent(ev);
                             } else {
                                 if (isScroll) {
                                     return super.onInterceptTouchEvent(ev);
                                 }
-
                             }
                         } else {
-                            //向上
                             if (type == TYPE_FOLD) {
                                 return super.onInterceptTouchEvent(ev);
                             } else {
@@ -259,7 +252,6 @@ public class CalendarLayout extends FrameLayout {
                     return;
                 }
 
-                //判断速度
                 final int pointerId = activitPotionerId;
                 mVelocityTracker.computeCurrentVelocity(1000, mMaxVelocity);
                 float crrentV = VelocityTrackerCompat.getYVelocity(mVelocityTracker, pointerId);

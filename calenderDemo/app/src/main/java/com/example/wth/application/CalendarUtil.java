@@ -6,14 +6,12 @@ import java.util.Date;
 
 public class CalendarUtil {
 
-    //获取一月的第一天是星期几
     public static int getDayOfWeek(int y, int m, int day) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(y, m - 1, day);
         return calendar.get(Calendar.DAY_OF_WEEK);
     }
 
-    //获取一月最大天数
     public static int getDayOfMaonth(int y, int m) {
         Calendar cal = Calendar.getInstance();
         cal.set(y, m - 1, 1);

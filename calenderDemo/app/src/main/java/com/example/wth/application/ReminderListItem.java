@@ -6,7 +6,7 @@ package com.example.wth.application;
 
 public class ReminderListItem {
     private String time;
-    private int isCheck;//0,未选中；1选中
+    private int isCheck;
 
     public ReminderListItem(String time, int isCheck) {
         this.time = time;

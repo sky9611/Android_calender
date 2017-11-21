@@ -32,8 +32,6 @@ class Utils {
        return (int) (dipValue * scale + 0.5f);
    }
 
-
-   //获取显示版本
    public static String getVersionName(Context context) {
        try {
            PackageManager manager =context.getPackageManager();
@@ -46,7 +44,6 @@ class Utils {
        }
    }
 
-   //获取版本信息
    public static int getVersion(Context context) {
        try {
            PackageManager manager = context.getPackageManager();
@@ -65,15 +62,12 @@ class Utils {
        return getStateListDrawable(pressDrawable, normalDrawable);
    }
 
-   //获取带透明度的圆角矩形
    public static Drawable getRoundDrawalbe(int alpha, int color, int radir) {
        int normalColor = Color.argb(alpha, Color.red(color), Color.green(color), Color.blue(color));
        Drawable normalDrawable = getRoundDrawalbe(normalColor, radir);
        return normalDrawable;
    }
 
-
-   //根据颜色获取圆角矩形
    public static Drawable getRoundDrawalbe(int color, int radir) {
        radir = px(radir);
        GradientDrawable drawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{color, color});
@@ -104,8 +98,4 @@ class Utils {
 
        return drawable;
    }
-
-
-
-
 }
