@@ -132,6 +132,7 @@
                 android:src="@drawable/ic_exit"/>
 
             <Button
+                android:id="@+id/quittergroupe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#700"
