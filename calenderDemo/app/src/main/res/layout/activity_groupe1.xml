@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.matthieu.app.Mes_groupes">
+    tools:context="com.example.wth.application.Mes_groupes">
 
 
     <LinearLayout
