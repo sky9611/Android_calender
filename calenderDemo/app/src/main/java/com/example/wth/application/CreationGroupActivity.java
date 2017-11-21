@@ -38,20 +38,14 @@ public class CreationGroupActivity extends AppCompatActivity {
     //valable pour les boutoon retour et confirmer(attribut : onClick)
     //enlever les comentaire;
     public void confirmer(View view){
+        Intent i =new Intent (this,Mes_groupes2.class);
+        startActivity(i);
+    }
+    public void retour(View view){
+        Intent i =new Intent (this,Mes_groupes.class);
+        startActivity(i);
+    }
 
-        //Intent i=new Intent(this,MesGroupes.class);
-       // startActivity(i);
-    }
 
-    /*
-    //pour les autres boutton
-    public void AjouterMembre(View view){
-        startActivity(i);
-    }
-    public void AjouterEvenement(View view){
-        startActivity(i);
-    }
-    public void ImporterAgenda(View view){
-        startActivity(i);
-    } */
+
 }
