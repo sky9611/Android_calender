@@ -52,10 +52,7 @@
         <activity android:name=".EventChangesDialog"></activity>
         <activity android:name=".EventChangesActivity" />
         <activity android:name=".CreationGroupActivity"></activity>
-        <activity
-            android:name=".AddMember"
-            android:label="@string/title_activity_add_member"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AddMember"></activity>
         <activity android:name=".Mes_groupes2"></activity>
     </application>
 

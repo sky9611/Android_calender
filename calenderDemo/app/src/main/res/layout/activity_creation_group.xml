@@ -99,7 +99,6 @@
 
 
             <ImageButton
-                android:id="@+id/add_member"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="35dp"
                 android:layout_height="25dp"
@@ -111,6 +110,7 @@
                 app:srcCompat="@drawable/ic_action_name" />
 
             <TextView
+                android:id="@+id/add_member"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="9.7"
@@ -126,7 +126,6 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/add_event"
                 style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="35dp"
                 android:layout_height="25dp"
@@ -138,6 +137,7 @@
                 app:srcCompat="@drawable/ic_action_name" />
 
             <TextView
+                android:id="@+id/add_event"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="9.7"

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 public class CreationGroupActivity extends AppCompatActivity {
@@ -24,11 +25,19 @@ public class CreationGroupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_creation_group);
         // nom = (EditText) findViewById(R.id.groupe_name_label);
         //desctiption = (EditText) findViewById(R.id.groupe_name_label);
-        ImageButton ib = (ImageButton) findViewById(R.id.add_member);
+        TextView ib =  findViewById(R.id.add_member);
         ib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(CreationGroupActivity.this , AddMember.class);
+                startActivity(i);
+            }
+        });
+        TextView createNewEvent =  findViewById(R.id.add_event);
+        createNewEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CreationGroupActivity.this , CreationEventActivity.class);
                 startActivity(i);
             }
         });
@@ -39,10 +48,6 @@ public class CreationGroupActivity extends AppCompatActivity {
     //enlever les comentaire;
     public void confirmer(View view){
         Intent i =new Intent (this,Mes_groupes2.class);
-        startActivity(i);
-    }
-    public void retour(View view){
-        Intent i =new Intent (this,Mes_groupes.class);
         startActivity(i);
     }
 
