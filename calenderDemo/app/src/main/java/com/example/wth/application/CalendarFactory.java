@@ -34,17 +34,29 @@ public class CalendarFactory {
         for (int i = fweek - 1; i > 0; i--) {
             CalendarObject bean = geCalendarBean(y, m, 1 - i);
             bean.monthFlag = -1;
+            bean.eventFlag = -1;
             list.add(bean);
         }
 
-        for (int i = 0; i < total; i++) {
+        for (int i = 0; i < 15; i++) {
             CalendarObject bean = geCalendarBean(y, m, i + 1);
+            bean.eventFlag = -1;
+            list.add(bean);
+        }
+        for (int i = 15; i < 17; i++) {
+            CalendarObject bean = geCalendarBean(y, m, i + 1);
+            list.add(bean);
+        }
+        for (int i = 17; i < total; i++) {
+            CalendarObject bean = geCalendarBean(y, m, i + 1);
+            bean.eventFlag = -1;
             list.add(bean);
         }
 
         for (int i = 0; i < 42 - (fweek - 1) - total; i++) {
             CalendarObject bean = geCalendarBean(y, m, total + i + 1);
             bean.monthFlag = 1;
+            bean.eventFlag = -1;
             list.add(bean);
         }
         return list;

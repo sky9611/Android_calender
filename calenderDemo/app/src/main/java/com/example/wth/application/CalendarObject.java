@@ -9,6 +9,7 @@ public class CalendarObject {
     public int week;
 
     public int monthFlag;
+    public int eventFlag;
 
 
     public CalendarObject(int year, int moth, int day) {

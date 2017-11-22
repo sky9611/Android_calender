@@ -95,8 +95,10 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
                 view.setText("" + bean.day);
                 if (bean.monthFlag != 0) {
                     view.setTextColor(0xff9299a1);
-                } else {
+                } else if(bean.eventFlag != 0 || bean.month!=11){
                     view.setTextColor(0xffffffff);
+                } else {
+                    view.setTextColor(0xff00ffff);
                 }
 
                 return convertView;
@@ -109,30 +111,12 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
                 mTitle.setText(bean.day + "/" + getDisPlayNumber(bean.month) + "/" + getDisPlayNumber(bean.year));
                 list.clear();
                 //mList.removeAllViews();
-                if (position==18) {
+                if (position==18 && bean.month==11) {
                     list.add(new EventItem("Projet Prolog 14h00/16h00"));
                     list.add(new EventItem("Projet IHM 16h00/18h00"));
                 }
-                if (position==19) {
+                if (position==19 && bean.month==11) {
                     list.add(new EventItem("Projet Prolog 14h00/16h00"));
-                }
-                if (position==17) {
-                    list.add(new EventItem("1"));
-                    list.add(new EventItem("2"));
-                    list.add(new EventItem("3"));
-                    list.add(new EventItem("4"));
-                    list.add(new EventItem("5"));
-                    list.add(new EventItem("6"));
-                    list.add(new EventItem("7"));
-                    list.add(new EventItem("8"));
-                    list.add(new EventItem("9"));
-                    list.add(new EventItem("10"));
-                    list.add(new EventItem("11"));
-                    list.add(new EventItem("12"));
-                    list.add(new EventItem("13"));
-                    list.add(new EventItem("14"));
-
-
                 }
 
                 adapter = new EventAdapter(view.getContext());
@@ -145,6 +129,7 @@ public class CalendarActivity extends AppCompatActivity implements NavigationVie
 
             }
         });
+
 
         int[] data = CalendarUtil.getYMD(new Date());
         mTitle.setText(data[2] + "/" + data[1] + "/" + data[0]);
