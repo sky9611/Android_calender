@@ -3,10 +3,12 @@ package com.example.wth.application;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -132,10 +134,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         testPopupButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i = new Intent(LoginActivity.this ,EventChangesDialog.class);
-                startActivity(i);
+                //Intent i = new Intent(LoginActivity.this ,EventChangesDialog.class);
+                //startActivity(i);
+                new AlertDialog.Builder(LoginActivity.this)
+                        .setTitle("Changement d'événement")
+                        .setMessage("4 événements ont été modifiés")
+                        .setNegativeButton("plus tard", null)
+                        .setPositiveButton("consulter", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                Intent i = new Intent(LoginActivity.this , EventChangesActivity.class);
+                                startActivity(i);
+                            }
+                        })
+                        .show();
             }
         });
+
     }
 
     private void populateAutoComplete() {
